@@ -115,6 +115,8 @@ function addTodo() {
 
     addTodoInput.value = " ";
     addTodoButton.disabled = true;
+
+    readTodo(description);
 }
 
 // eslint-disable-next-line
@@ -148,4 +150,12 @@ function renderTodoInReadModeStriked(todo) {
     li.append(span);
 
     return li;
+}
+
+
+function readTodo(description) {
+    const message = new SpeechSynthesisUtterance();
+    message.text = description;
+    message.voice = speechSynthesis.getVoices()[0];
+    speechSynthesis.speak(message);
 }
