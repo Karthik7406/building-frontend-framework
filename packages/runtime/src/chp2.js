@@ -104,6 +104,10 @@ function addTodo() {
     // yet to be implemented
     const description = addTodoInput.value;
 
+
+    if(todos.includes(description)) {
+        alert("Task already exists");
+    }
     todos.push(description);
 
     const todo = renderTodoInReadMode(description);
