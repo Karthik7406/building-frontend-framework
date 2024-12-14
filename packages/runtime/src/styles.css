@@ -1,0 +1,29 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap'); */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 500px;
+  margin: 2em auto;
+  border: 1px solid red;
+}
+
+body>h1 {
+   font-size: 4ch;
+}
+
+body>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#add-todo-btn {
+    width:150px;
+    margin: 2em auto;
+    background-color: lightgreen;
+}
+
+#todo-input {
+    font-style: italic;
+}
