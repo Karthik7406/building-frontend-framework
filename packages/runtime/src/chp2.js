@@ -113,9 +113,16 @@ function addTodo() {
     addTodoButton.disabled = true;
 }
 
+// eslint-disable-next-line
 function removeTodo(index) {
-    todos.splice(index,1);
-    todosList.childNodes[index].remove();
+
+    // todos.splice(index,1);
+    // todosList.childNodes[index].remove();
+
+    console.log(todosList.childNodes);
+    const strikedText = renderTodoInReadModeStriked(todos[index]);
+   todosList.replaceChild(strikedText, todosList.childNodes[index]);
+    
 }
 
 function updateTodo(index, description) {
@@ -124,3 +131,17 @@ function updateTodo(index, description) {
     todosList.replaceChild(todo, todosList.childNodes[index]);
 }
 
+
+
+function renderTodoInReadModeStriked(todo) { 
+
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    const striked = document.createElement("s");
+
+    striked.textContent = todo;
+    span.append(striked);
+    li.append(span);
+
+    return li;
+}
